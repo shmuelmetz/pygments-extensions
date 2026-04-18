@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pygments-extensions"
+version = "0.1.0"
+description = "A collection of community-maintained lexers extending the Pygments syntax-highlighting ecosystem."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Your Name" }
+]
+
+dependencies = [
+    "Pygments>=2.0"
+]
+
+keywords = [
+    "pygments",
+    "syntax-highlighting",
+    "lexer",
+    "mainframe",
+    "pli",
+    "rexx",
+    "ispf",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Text Processing :: Filters",
+    "Topic :: Text Processing :: Markup",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/<your-username>/pygments-extensions"
+Issues = "https://github.com/<your-username>/pygments-extensions/issues"
+
+# ------------------------------------------------------------
+# Entry points: this is how Pygments discovers your lexers.
+# Each lexer you add will need an entry here.
+# ------------------------------------------------------------
+[project.entry-points."pygments.lexers"]
+pli = "pygments_extensions.lexers.pli:PLILexer"
+oorexx = "pygments_extensions.lexers.oorexx:OORexxLexer"
+ispf_panel = "pygments_extensions.lexers.ispf_panel:ISPFPanelLexer"
+ispf_message = "pygments_extensions.lexers.ispf_message:ISPFMessageLexer"
+ispf_skeleton = "pygments_extensions.lexers.ispf_skeleton:ISPFSkeletonLexer"
+ispf_dtl = "pygments_extensions.lexers.ispf_dtl:ISPFDTLLexer"
+
+# Add future lexers here:
+# hlasm = "pygments_extensions.lexers.hlasm:HLASMLexer"
+# jcl = "pygments_extensions.lexers.jcl:JCLLexer"
+
+# ------------------------------------------------------------
+# Optional development tools
+# ------------------------------------------------------------
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "black",
+    "ruff",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "W"]
