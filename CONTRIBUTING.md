@@ -50,7 +50,7 @@ Use `CamelCase` ending in `Lexer`:
 
 ```
 class PLILexer(RegexLexer):
-class OORexxLexer(RegexLexer):
+class ooRexxLexer(RegexLexer):
 class ISPFPanelLexer(RegexLexer):
 ```
 
