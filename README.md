@@ -18,7 +18,7 @@ This repository will host multiple lexers, including:
   - Messages  
   - Skeletons  
   - DTL
-- **Future lexers** (planned)
+- **Future lexers** (Contemplated)
   - HLASM  
   - JCL  
   - CMS Pipelines  
